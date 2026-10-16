@@ -1,0 +1,667 @@
+
+/* =================================
+1. CONFIGURAÇÕES GERAIS
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --marfin: #F8F4EE;
+    --branco: #FFFFFF;
+    --bege: #E8DCCB;
+    --dourado: #B89562;
+    --dourado-escuro: #967344;
+    --marrom: #352B25;
+    --texto-secundario: #766A60;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--marfim);
+    color: var(--marrom);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =================================
+2. CABEÇALHO E NAVEGAÇÃO
+================================= */
+
+header {
+    width: 100%;
+    min-height: 94px;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background-color: var(--branco);
+    border-bottom: 1px solid rgba(184, 149, 98, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.logo span {
+    display: block;
+    color: var(--dourado-escuro);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    font-size: 0.88rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--dourado-escuro);
+}
+
+/* =================================
+3. BOTÕES
+================================= */
+
+.botao-agendar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    background-color: var(--dourado);
+    color: var(--branco);
+    border: 1px solid var(--dourado);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.botao-agendar:hover {
+    background-color: var(--dourado-escuro);
+    transform: translateY(-2px);
+}
+
+/* =================================
+4. SEÇÃO PRINCIPAL (HERO)
+================================= */
+
+.hero {
+    min-height: 610px;
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.hero-conteudo {
+    max-width: 570px;
+}
+
+.subtitulo {
+    margin-bottom: 22px;
+    color: var(--dourado-escuro);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.7rem, 4.5vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.14;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--dourado-escuro);
+    font-style: italic;
+}
+
+.hero-descricao {
+    max-width: 450px;
+    margin-bottom: 32px;
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.hero-imagem {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    background-color: var(--bege);
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.hero-imagem:hover img {
+    transform: scale(1.03);
+}
+
+/* =================================
+   5. SEÇÕES DE CONTEÚDO
+================================= */
+
+#tratamentos,
+#sobre,
+#contato {
+    padding: 85px 9%;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+#tratamentos,
+#contato {
+    background-color: var(--branco);
+}
+
+#sobre {
+    background-color: var(--bege);
+}
+
+#tratamentos h2,
+#sobre h2,
+#contato h2 {
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+}
+
+#contato p {
+    color: var(--texto-secundario);
+}
+
+
+/* =================================
+   6. RODAPÉ
+================================= */
+
+footer {
+    padding: 28px 7%;
+    background-color: var(--marrom);
+    color: var(--marfim);
+    text-align: center;
+    font-size: 0.82rem;
+}
+
+
+/* =================================
+   7. RESPONSIVIDADE
+================================= */
+
+@media (max-width: 1050px) {
+    header {
+        padding: 22px 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        gap: 35px;
+    }
+
+    .hero-imagem {
+        height: 410px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 5%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        gap: 12px 20px;
+    }
+
+    nav a {
+        font-size: 0.82rem;
+    }
+
+    header > .botao-agendar {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .hero-imagem {
+        height: 380px;
+    }
+
+    #tratamentos,
+    #sobre,
+    #contato {
+        padding: 60px 7%;
+    }
+}
+
+@media (max-width: 380px) {
+    nav ul {
+        gap: 10px 14px;
+    }
+
+    .hero-imagem {
+        height: 300px;
+    }
+
+    .botao-agendar {
+        padding: 12px 16px;
+    }
+}
+
+
+/* =================================
+   8. CABEÇALHOS DE SEÇÃO
+================================= */
+
+.secao-cabecalho {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.secao-cabecalho > p:not(.subtitulo) {
+    margin-top: 14px;
+    color: var(--texto-secundario);
+}
+
+.tratamentos {
+    padding: 95px 7%;
+    background-color: var(--branco);
+}
+
+
+/* =================================
+   9. CARDS DE TRATAMENTOS
+================================= */
+
+.tratamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.tratamento-card {
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--marfim);
+    border: 1px solid rgba(184, 149, 98, 0.2);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tratamento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(53, 43, 37, 0.09);
+}
+
+.tratamento-card > img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+}
+
+.tratamento-info {
+    padding: 28px 24px 30px;
+}
+
+.tratamento-numero {
+    color: var(--dourado-escuro);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.tratamento-info h3 {
+    margin: 12px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.tratamento-info p {
+    min-height: 82px;
+    color: var(--texto-secundario);
+    font-size: 0.92rem;
+}
+
+.link-elegante {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 22px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--dourado);
+    color: var(--dourado-escuro);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* =================================
+   10. SOBRE A AURA
+================================= */
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 100px 9%;
+    background-color: var(--marfim);
+}
+
+.sobre-imagem {
+    height: 480px;
+    overflow: hidden;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre-conteudo h2 {
+    margin: 0 0 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.3rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.sobre-conteudo > p:not(.subtitulo) {
+    margin-bottom: 18px;
+    color: var(--texto-secundario);
+}
+
+.sobre-conteudo .botao-agendar {
+    margin-top: 12px;
+}
+
+
+/* =================================
+   11. DIFERENCIAIS
+================================= */
+
+.diferenciais {
+    padding: 90px 7%;
+    background-color: var(--bege);
+}
+
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.diferencial {
+    padding: 30px 24px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.diferencial-icone {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--dourado-escuro);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+.diferencial h3 {
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.diferencial p {
+    color: var(--texto-secundario);
+    font-size: 0.92rem;
+}
+
+
+/* =================================
+   12. CONTATO
+================================= */
+
+.contato {
+    padding: 90px 7%;
+    text-align: center;
+    background-color: var(--branco);
+}
+
+.contato > p:not(.subtitulo) {
+    max-width: 550px;
+    margin: 0 auto 28px;
+    color: var(--texto-secundario);
+}
+
+.contato .botao-agendar {
+    margin-top: 5px;
+}
+
+
+/* =================================
+   13. AJUSTES RESPONSIVOS
+================================= */
+
+@media (max-width: 900px) {
+    .tratamentos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre {
+        gap: 35px;
+        padding: 75px 6%;
+    }
+
+    .sobre-imagem {
+        height: 420px;
+    }
+
+    .diferenciais-grid {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tratamentos,
+    .diferenciais,
+    .contato {
+        padding: 65px 6%;
+    }
+
+    .secao-cabecalho {
+        margin-bottom: 32px;
+    }
+
+    .tratamentos-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .tratamento-card > img {
+        height: 250px;
+    }
+
+    .tratamento-info p {
+        min-height: 0;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 65px 7%;
+    }
+
+    .sobre-imagem {
+        height: 350px;
+    }
+
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .diferencial {
+        padding: 28px 22px;
+    }
+}
+
+
+/* =================================
+   14. BOTÃO FLUTUANTE DO WHATSAPP
+================================= */
+
+.whatsapp-flutuante {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+    border-radius: 50px;
+
+    background-color: #287D4F;
+    color: #FFFFFF;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-flutuante:hover {
+    background-color: #1E633E;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.whatsapp-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+
+/* =================================
+   15. NAVEGAÇÃO E ACESSIBILIDADE
+================================= */
+
+/* Identifica visualmente os links ao usar o teclado */
+a:focus-visible {
+    outline: 3px solid var(--dourado-escuro);
+    outline-offset: 4px;
+}
+
+/* Evita que o botão cubra o conteúdo em telas pequenas */
+@media (max-width: 480px) {
+    .whatsapp-flutuante {
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 16px;
+        font-size: 0.82rem;
+    }
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
